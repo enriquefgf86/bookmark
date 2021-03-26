@@ -1,0 +1,28 @@
+<mat-dialog-content *ngIf="!false">
+  <h2>Edit Bookmark</h2>
+  <form [formGroup]='editForm' (submit)="editBook()" >
+    <p>
+    <mat-form-field class="example-full-width" *ngIf="bookMarkToEdit">
+      <!-- <mat-label>Insert Title</mat-label> -->
+      <input  type="text"  matInput formControlName="title" [placeholder]="bookMarkToEdit[0].title">
+    </mat-form-field>
+    </p>
+    <p>
+    <mat-form-field *ngIf="bookMarkToEdit">
+      <!-- <mat-label>Insert URL</mat-label> -->
+      <input type="text" formControlName="link" matInput [placeholder]="bookMarkToEdit[0].link">
+    </mat-form-field>
+    </p>
+
+    <p>
+    <mat-form-field *ngIf="bookMarkToEdit">
+      <!-- <mat-label>Groups</mat-label> -->
+        <input type="text" readonly  matInput [placeholder]="bookMarkToEdit[0].group">
+    </mat-form-field>
+    </p>
+
+    <button mat-button color='primary' type='submit' >Edit</button>
+
+  </form>
+
+</mat-dialog-content>

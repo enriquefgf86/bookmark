@@ -1,0 +1,10 @@
+.rounded{
+  border-radius: 10px !important;
+
+}
+.avatar{
+  border-radius:50% !important;
+ height:100%!important;
+ width:20px !important;
+
+}

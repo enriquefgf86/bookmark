@@ -1,0 +1,30 @@
+<div class="container pt-2">
+  <mat-toolbar color="primary" class='pt-2 rounded'>
+    <h3>Bookmarks</h3>
+  </mat-toolbar>
+  <mat-list *ngFor="let item of tables; let i = index">
+    <mat-chip-list aria-label="Fish selection">
+      <mat-chip color="primary">{{item.group}} <img class='avatar ml-1' [src]="item.group|pipeimg" alt="img"> </mat-chip>
+    </mat-chip-list>
+
+
+    <mat-list-item class='d-flex flex-row' *ngFor="let itemsbyGroup of item.groups">
+      <mat-icon color='primary' mat-list-icon>bookmark</mat-icon>
+
+      <div mat-line>{{itemsbyGroup.title}}</div>
+      <button mat-icon-button >
+        <mat-icon  (click)="deleteBookmark($event)" [id]='itemsbyGroup.id' color='primary'>delete_forever</mat-icon>
+      </button>
+      <button mat-icon-button class="navMenu-button" routerLink='/tabs/tab2/{{itemsbyGroup.id}}' >
+        <mat-icon class='icon'  [id]='itemsbyGroup.id' color='primary'>visibility</mat-icon>
+      </button>
+
+      <button mat-icon-button class="navMenu-button" (click)="editBookMark($event)" >
+        <mat-icon class='icon'  [id]='itemsbyGroup.id' color='primary'> auto_fix_normal</mat-icon>
+      </button>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+
+  </mat-list>
+</div>
+
