@@ -25,7 +25,7 @@ import { MenuAdminHomeComponent } from './pages/menu-admin/menu-admin-home/menu-
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { environment } from './environments/environment';
+import { environment } from '../environments/environment';
 import { globalReducer } from './globalReducer';
 import { EffectsModule } from '@ngrx/effects';
 import { PipeimgPipe } from './pipes/pipeimg.pipe';
