@@ -4,13 +4,13 @@
     <p>
     <mat-form-field class="example-full-width" *ngIf="bookMarkToEdit">
       <!-- <mat-label>Insert Title</mat-label> -->
-      <input  type="text"  matInput formControlName="title" [placeholder]="bookMarkToEdit[0].title">
+      <input  type="text" data-testEditTitle  matInput formControlName="title" [placeholder]="bookMarkToEdit[0].title">
     </mat-form-field>
     </p>
     <p>
     <mat-form-field *ngIf="bookMarkToEdit">
       <!-- <mat-label>Insert URL</mat-label> -->
-      <input type="text" formControlName="link" matInput [placeholder]="bookMarkToEdit[0].link">
+      <input type="text" data-testEditLink formControlName="link" matInput [placeholder]="bookMarkToEdit[0].link">
     </mat-form-field>
     </p>
 
@@ -21,7 +21,7 @@
     </mat-form-field>
     </p>
 
-    <button mat-button color='primary' type='submit' >Edit</button>
+    <button mat-button color='primary' data-testBtnEdit type='submit' >Edit</button>
 
   </form>
 

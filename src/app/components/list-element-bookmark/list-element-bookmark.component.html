@@ -1,27 +1,29 @@
 <div class="container  h-100">
-  <div *ngIf="selectedBookMark" style='margin-top:20%' class="row d-flex align-items-center align-self-center justify-content-center h-100">
-      <mat-card class="card" >
-        <mat-card-header>
-          <div mat-card-avatar class="example-header-image"></div>
-          <mat-card-title>{{selectedBookMark.title}}</mat-card-title>
-          <mat-card-subtitle>{{selectedBookMark.group}}</mat-card-subtitle>
-        </mat-card-header>
-        <img mat-card-image [src]="selectedBookMark.group|pipeimg" alt="Photo of a Shiba Inu">
-        <mat-card-content>
-          <p>
-            {{selectedBookMark.link}}
-          </p>
-        </mat-card-content>
-        <mat-card-actions>
-          <a [href]="selectedBookMark.link" target="_blank">
-            <button mat-button>
-              <mat-icon>open_in_new</mat-icon>
-            </button></a>
-          <button mat-icon-button color='primary'>
-            DELETE <mat-icon (click)="deleteBookmark($event)" [id]='selectedBookMark.id' color='primary'>delete_forever
-            </mat-icon>
-          </button>
-        </mat-card-actions>
-      </mat-card>
-    </div>
+  <div *ngIf="selectedBookMark" style='margin-top:20%'
+    class="row d-flex align-items-center align-self-center justify-content-center h-100">
+    <mat-card class="card">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{selectedBookMark.title}}</mat-card-title>
+        <mat-card-subtitle>{{selectedBookMark.group}}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image [src]="selectedBookMark.group|pipeimg" alt="Photo of a Shiba Inu">
+      <mat-card-content>
+        <p>
+          {{selectedBookMark.link}}
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <a [href]="selectedBookMark.link" target="_blank">
+          <button mat-button data-testGoToWeb>
+            <mat-icon>open_in_new</mat-icon>
+          </button></a>
+        <button mat-icon-button color='primary'>
+          DELETE <mat-icon data-testDelete (click)="deleteBookmark($event)" [id]='selectedBookMark.id' color='primary'>
+            delete_forever
+          </mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
 </div>

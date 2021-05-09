@@ -4,29 +4,30 @@
     <p>
       <mat-form-field class="example-full-width">
         <mat-label>Insert Title</mat-label>
-        <input type="text" matInput formControlName="title" placeholder="Some Title">
+        <input data-testTitle type="text" matInput formControlName="title" placeholder="Some Title">
       </mat-form-field>
     </p>
 
     <p>
       <mat-form-field>
         <mat-label>Insert URL</mat-label>
-        <input type="text" formControlName="link" matInput placeholder="https://xxxxxxxxx">
+        <input data-testUrl type="text" formControlName="link" matInput placeholder="https://xxxxxxxxx">
       </mat-form-field>
     </p>
 
     <p>
-      <mat-form-field >
+      <mat-form-field>
         <mat-label>Groups</mat-label>
-        <mat-select formControlName="group" placeholder="Select A Group">
-          <mat-option *ngFor="let group of groups" [value]='group' ngDefaultControl>{{group}}</mat-option>
+        <mat-select data-testSelect formControlName="group" placeholder="Select A Group">
+          <mat-option data-testOption *ngFor="let group of groups" [value]='group' ngDefaultControl>{{group}}
+          </mat-option>
         </mat-select>
       </mat-form-field>
     </p>
 
 
 
-    <button mat-button color='primary' type='submit'>Create</button>
+    <button data-testBtn2 mat-button color='primary' type='submit'>Create</button>
 
 
   </form>
